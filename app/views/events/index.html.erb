@@ -22,15 +22,17 @@
 <div class="events-application-container">
 
   <div data-scroll id="tickets">
-    <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
+    <!-- <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
       <input class="sold-tickets" type="hidden" value="<%= @taken_seats.size %>">
-    </div>
-    <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px">
+    </div> -->
+    <!-- <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px;"></div> -->
+    <!-- <div id="chartContainer" style="background-color:inherit;width: 50%; height: 300px; display:inline-box; float:left;"></div>
+    <div id="statistics" style="background-color:red; width:50%; height:300px; display:inline-box; float:left;"></div> -->
   </div>
 
-  <div data-scroll id="events-section">
+  <div data-scroll id="events-section" style="clear:both;">
       <h1 class="admin-title"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
           <div class="events-handler">
               <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
@@ -131,7 +133,6 @@
           <% end %>
       </div>
 </div>
-
 <script id="form-template" type="text/x-handlebars-template">
   <td>
     <form action="/event_speaker/{{event_speaker_id}}" method="post">
