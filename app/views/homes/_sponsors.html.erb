@@ -6,11 +6,18 @@
 </div>
 
 <div id="sponsors-img-div">
-  <a href="https://generalassemb.ly/"><%= image_tag("ga-logo.png", class: "sponsors-img")%></a>
-  <a href="http://keitheous.github.io/gimmick-for-wdi-conference/"><%= image_tag("panda-icon2.png", id: "panda", class: "sponsors-img")%></a>
-
+  <div class="sponsors-static">
+    <a href="https://generalassemb.ly/"><%= image_tag("ga-logo.png", class: "sponsors-img")%></a>
+    <a href="http://keitheous.github.io/gimmick-for-wdi-conference/"><%= image_tag("panda-icon2.png", id: "panda", class: "sponsors-img")%></a>
+  </div>
+  <div class="sponsor-img-wrap">
+    <% @images.each do |image| %>
+      <div class="sponsor-loop-image">
+        <%= image_tag "sponsors/#{image.split('/').last}", class:"sponsors-img" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
 
 <div id="footer">
   <p>© 2016 WDI Conference by <a href="https://github.com/bevieboo">Bevin</a>, <a href="https://github.com/EmilyBie">Emily</a>, <a href="https://github.com/YehongYou">Leo</a>, <a href="">Keith</a>, <a href="https://github.com/hanernlee">Chris</a></p>

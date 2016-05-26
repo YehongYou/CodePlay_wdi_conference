@@ -26,10 +26,6 @@ tr {
   line-height: 40px;
 }
 
-table, th, td {
-  border: 1px solid white;
-  border-radius: 5px;
-}
 
 h1 {
   font-size: 40px;
@@ -127,11 +123,34 @@ h1 {
   position: absolute;
   left: 70px;
   font-size: 12px;
-  top: 14px;
+  top: 8px;
+  padding: 7px 12px;
 }
 .logout-button:hover {
   background-color: white;
   /*color: #2980b9;*/
   color: #222;
   transition: 0.5s;
+}
+.login-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  font-size: 12px;
+  padding: 7px 12px;
+}
+.login-button:hover {
+  background-color: white;
+  /*color: #2980b9;*/
+  color: #222;
+  transition: 0.5s;
+}
+
+#both-forms input {
+  margin-bottom: 20px;
 }

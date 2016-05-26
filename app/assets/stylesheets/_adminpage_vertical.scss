@@ -1,33 +1,38 @@
 .admin-title {
   text-align:center;
-}
-
-#events-section {
-  min-height:100vh;
-  height:auto;
-  background-color: $denim;
-  padding-top:6em;
-}
-
-#applications {
-  min-height:100vh;
-  height:auto;
-  background-color: $caribbean-green;
-  padding-top:6em;
-}
-
-#event-speakers {
-  min-height:100vh;
-  height:auto;
-  background-color: $denim;
-  padding:6em 0 8em 0;
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 
 #tickets {
-  min-height:20em;
   height:auto;
   background-color: $caribbean-green;
-  padding:6em 0 8em 0;
+  padding-bottom: 50px;
+  .admin-title {
+    padding-top: 80px;
+  }
+}
+
+#events-section {
+  height:auto;
+  background-color: $denim;
+  padding-bottom: 50px;
+  .admin-title {
+    padding-top: 80px;
+  }
+}
+
+#applications {
+  height:auto;
+  background-color: $caribbean-green;
+  padding-bottom: 50px;
+}
+
+#event-speakers {
+  height:auto;
+  background-color: #F48F97;
+  padding-bottom: 50px;
+
 }
 
 .ticket-status {

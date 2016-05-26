@@ -1,13 +1,15 @@
 #sponsors {
   height: auto;
-  background-color: linen;
+  background-color: white;
   text-align:center;
   overflow:hidden;
-  color: #222;
+  color: $denim;
   padding-bottom: 3em;
 
   #sponsors-img-div {
     margin-top:4em;
+    width: 60%;
+    margin: 0 auto;
   }
 
   .sponsors-img {
@@ -21,7 +23,7 @@
   }
 
   #footer {
-    margin-top:9em;
+    margin-top:3em;
 
 
     a {
@@ -37,8 +39,8 @@
 
 #sponsors h1::after {
   content: "";
-  background-color: #222;
-  opacity: 0.5;
+  background-color: $denim;
+  opacity: 0.3;
   display: block;
   width: 158px;
   height: 3px;
@@ -73,4 +75,25 @@
   opacity: 1;
   transform: translateX(0);
   transition:1s;
+}
+
+.sponsors-img-wrap {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.sponsors-img-wrap img {
+  margin-top: 60px;
+}
+.sponsor-loop-image {
+  margin: 20px;
+  display: inline-block;
+  width: 25%;
+}
+.sponsors-static {
+  margin: 20px;
+  margin-top: 40px;
+}
+.sponsors-static img {
+  margin: 0 10px;
 }

@@ -11,5 +11,8 @@ class HomesController < ApplicationController
     event = Event.first
     @approved_speakers = event.event_speakers.where(application_status: "approved")
     @talks = @approved_speakers.sort_by{|talk| talk[:talk_time]}
+
+    # ====== show all sponsors image on the schedule of homepage ====
+    @images = Dir.glob("app/assets/images/sponsors/*.png")
   end
 end

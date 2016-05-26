@@ -13,7 +13,7 @@
         <li><a href="/users/<%= session[:user_id] %>" class="header-link login-name"><img src="/assets/user.png" class="login-avatar"></a></li>
         <li id="logout-icon"><a href="/logout"><button class="logout-button">Log Out</button></a></li>
       <% else %>
-        <li id="login-icon">Log In</li>
+        <li id="login-icon"><button class=login-button>Log In</button></li>
       <% end %>
       <%= render partial: "login"%>
       <li id="hamburger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>

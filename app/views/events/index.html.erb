@@ -22,47 +22,40 @@
 <div class="events-application-container">
 
   <div data-scroll id="tickets">
-    <!-- <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
+    <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
-      <input class="sold-tickets" type="hidden" value="<%= @taken_seats.size %>">
-    </div> -->
-    <!-- <div id="chartContainer" style="background-color:inherit;width: 100%; height: 300px;"></div> -->
-    <!-- <div id="chartContainer" style="background-color:inherit;width: 50%; height: 300px; display:inline-box; float:left;"></div>
-    <div id="statistics" style="background-color:red; width:50%; height:300px; display:inline-box; float:left;"></div> -->
-  </div>
+    </div>
 
   <div data-scroll id="events-section" style="clear:both;">
+
       <h1 class="admin-title"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
-          <div class="events-handler">
-              <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
-                <% if @events.length != 0 %>
-                    <table>
-                      <tr>
-                        <th class="event-name-td">Event Name</th>
-                        <th class="event-time-td">Event Time</th>
-                        <th>Actions</th>
-                      </tr>
-                      <% @events.each do |event| %>
-                        <tr class="admin-event-list" data-event-id="<%= event.id %>">
-                          <td class="event-name-td"><%= event.name %></td>
-                          <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
-                          <td>
-                            <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
-                            <form action="/events/<%= event.id %>" method="post">
-                              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                               <input type="hidden" value="delete" name="_method">
-                               <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                            </form>
-                          </td>
-                        </tr>
-                      <% end %>
-                    </table>
-                <% else %>
-                  <p class="no-event-msg">There's no event, add event please.</p>
-                <% end %>
+      <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
       </div>
+      <div class="events-handler">
+        <% if @events.length != 0 %>
+            <table>
+              <tr>
+                <th class="event-name-td">Event Name</th>
+                <th class="event-time-td">Event Time</th>
+                <th class="event-action-td">Actions</th>
+              </tr>
+              <% @events.each do |event| %>
+                <tr class="admin-event-list" data-event-id="<%= event.id %>">
+                  <td class="event-name-td"><%= event.name %></td>
+                  <td class="event-time-td"><%= event.time.to_formatted_s(:long)  %></td>
+                  <td>
+                    <button class="event-edit-btn"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></button>
+                    <button class="event-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+        <% else %>
+          <p class="no-event-msg">There's no event, add event please.</p>
+        <% end %>
     </div>
+  </div>
 
 
     <div data-scroll id="applications">
@@ -70,7 +63,7 @@
          <div class="applying-users-handler">
            <% if @event_speakers.length != 0 %>
              <table class="applying-list">
-               <tr>
+               <tr class="list-of-titles">
                  <th>Name</th>
                  <th>Topic</th>
                  <th>Content</th>
@@ -95,7 +88,7 @@
                <% end %>
              </table>
              <% else %>
-             <p class="no-pending-msg">There's no pending application.</p>
+             <p class="no-pending-msg">There are currently no pending application.</p>
            <% end %>
          </div>
       </div>
@@ -103,7 +96,7 @@
       <div data-scroll id="event-speakers">
         <h1 class="admin-title"><i class="fa fa-microphone" aria-hidden="true"></i>&nbsp;Speakers</h1>
           <% if @speakers == nil || @speakers.length == 0 %>
-            <p class="no-speakers">There's no speakers.</p>
+            <p class="no-speakers">There are currently no speakers.</p>
           <% else %>
             <table class="speakers-list-form">
               <tr>
@@ -111,34 +104,48 @@
                 <th>Topic</th>
                 <th>Time</th>
                 <th>Event</th>
-                <th>Action</th>
+                <th class="event-action-td">Action</th>
               </tr>
               <% @speakers.each do |speaker| %>
-                <tr>
+                <tr class="speaker-item" data-speaker-id="<%= speaker.id %>">
                   <td><%=speaker.user.name%></td>
                   <td><%=speaker.topic%></td>
                   <td><%=speaker.talk_time.strftime('%H')%>:<%=speaker.talk_time.strftime('%M')%></td>
                   <td><%=speaker.event.name%></td>
 
                   <td>
-                    <form action="/event_speaker/<%= speaker.id %>" method="post">
-                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                       <input type="hidden" value="delete" name="_method">
-                       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                    </form>
+                    <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                   </td>
                 </tr>
               <% end %>
             </table>
           <% end %>
       </div>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> 4949c574d2b3a9f162452bb759a88408cee81a93
 <script id="form-template" type="text/x-handlebars-template">
-  <td>
-    <form action="/event_speaker/{{event_speaker_id}}" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-       <input type="hidden" value="delete" name="_method">
-       <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-    </form>
-  </td>
+  <tr class="speaker-item" data-speaker-id="{{speaker_id}}">
+    <td>{{speaker_name}}</td>
+    <td>{{speaker_topic}}</td>
+    <td>{{talk_time_hour}}:{{talk_time_min}}</td>
+    <td>{{event_name}}</td>
+    <td>
+      <button class="speaker-delete-tbn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+    </td>
+  </tr>
+</script>
+
+<script id="speaker-template" type="text/x-handlebars-template">
+  <table class="speakers-list-form">
+      <tr>
+        <th>Name</th>
+        <th>Topic</th>
+        <th>Time</th>
+        <th>Event</th>
+        <th class="event-action-td">Action</th>
+      </tr>
+  </table>
 </script>

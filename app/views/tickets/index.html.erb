@@ -1,6 +1,6 @@
 <div id="tickets-page">
 
-  <a href="/">Back To Main</a>
+  <a href="/"><button class="login-button">Back To Main</button></a>
 
   <% content_for :body_classes do %>
     ticketspage
@@ -35,3 +35,21 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+
+  if (sessionStorage.getItem("seats_num") != "") {
+    var seat_numbers = sessionStorage.getItem("seats_num").split(",");
+    $.ajax({
+      url: '/api/seats/revert',
+      data: {seats_num: seat_numbers},
+      method: 'put'
+    }).done(function(){
+      // refresh the tickets page
+      sessionStorage.removeItem("seats_num");
+      window.location.reload();
+    }).fail(function(){
+      console.log('fail');
+    });
+  }
+</script>

@@ -2,36 +2,64 @@
   width: 50%;
   margin: 70px auto;
   text-align: center;
-  // background-color: white
-  border: 1px solid white ;
-  border-radius: 6px;
+  background-color: black;
+  border: 1px solid #333 ;
+  // border-radius: 6px;
 }
 
 .order-title {
   font-size: 40px;
   margin: 50px auto;
+  color: #76D1ED;
+  font-weight: bold;
 }
 
 #order-checkout {
   width: 80%;
   margin: 50px auto;
-  border: 1px solid white;
+  margin-bottom: 50px;
+  border: 1px solid #222;
+}
+// #order-checkout > table {
+//   border: 1px solid #222;
+// }
+
+.order-summary table {
+  border: 1px solid #222;
+  // border-radius: 5px;
+  padding: 6px 10px;
+  border-collapse: collapse;
+}
+.order-summary tr {
+  border: 1px solid #222;
+}
+.order-summary td {
+  border: 1px solid #222;
 }
 
-.seat-checkout {}
-.type-checkout {}
-.price-checkout {}
+// .seat-checkout {
+//   background-color:$caribbean-green;
+// }
+//
+// .type-checkout {
+//   background-color:$denim;
+// }
+//
+// .price-checkout {
+//   background-color:$froly;
+// }
 
 .payment-form {
   display: block;
 }
 
 .total-checkout {
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .pay-now-btn {
-  margin: 50px auto;
+  margin: 30px auto;
+  margin-bottom: 40px;
 }
 
 .thank-you-msg-wrap{
@@ -60,6 +88,10 @@
   left: 50%;
   border-radius: 6px;
   padding-top: 12px;
+
+  p {
+    padding-top: 4em;
+  }
 }
 
 .thank-you {
@@ -98,16 +130,28 @@ canvas {
 .back-to-choose-seats {
   cursor:pointer;
   color:white;
-  font-size: 1.1em;
-  padding:1em;
 }
+
 .back-to-choose-seats:hover {
-  color: $california;
+  color: $froly;
 }
+
 .time-left {
-  color:gray;
+  color:white;
   text-align: center;
   h4{
     margin:10px;
   }
+}
+
+#checkout-page {
+  background-image: url('bg3.jpg');
+  background-size:cover;
+  background-position: center center;
+  height:100%;
+  padding:1em;
+}
+
+#counter {
+  margin:0;
 }

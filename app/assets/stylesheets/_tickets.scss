@@ -23,7 +23,7 @@
 }
 
 .seat:hover {
-  background-color: $california;
+  background-color: $froly;
   opacity: 0.8;
   transition: 0.5s;
   color: white;
@@ -43,12 +43,12 @@
 }
 
 .premium {
-  background-color: #fff2c5;
-  color: #fff2c5;
+  background-color: #f9babd;
+  color: #f9babd;
 }
 
 .selected {
-  background-color: $california;
+  background-color: $froly;
   color: white;
 }
 
@@ -113,7 +113,7 @@
   cursor: pointer;
 }
 
-.checkout-button:hover {
+.checkout-button:hover:enabled {
   background-color: white;
   /*color: #2980b9;*/
   color: #222;
@@ -124,6 +124,6 @@
   padding:1em;
 
   a:hover {
-    color:$california;
+    color:$froly;
   }
 }

@@ -51,25 +51,16 @@ $(document).ready(function() {
       $('.orders-bar').html(displaySummary())
       if ($('.orders-bar').html() != '') {
         $('.orders-bar').addClass('show');
+        $('.checkout-button').prop("disabled",false);
       } else {
         $('.orders-bar').removeClass('show');
+        $('.checkout-button').prop("disabled",true);
       };
     })
-
-    $('.checkout-button').click(function() {
-      var n = 120;
-      setTimeout(countDown(),1000);
-
-      function countDown(){
-         n--;
-         if(n > 0){
-            setTimeout(countDown,1000);
-            console.log(n);
-         }
-      }
-    })
-
   })
+
+  // disable checkout button if no seats are selected
+  $('.checkout-button').prop("disabled",true);
 
   // Function for calculating total charges
   function calculateTotal() {

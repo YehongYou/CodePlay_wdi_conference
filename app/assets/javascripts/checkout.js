@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  
+// $(document).ready(function() {
+
   (function() {
     var Particle;
 
@@ -131,4 +131,4 @@ $(document).ready(function() {
 
   }).call(this);
 
-})
+// })

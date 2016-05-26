@@ -1,32 +1,40 @@
 <h1>Hi, <%= @ticket.email %></h1>
-<h3>Thank you for your booking.</h3>
-<h3>Your Order Number is : <%= @ticket.id%></h3>
-<div class="user-ticket-wrap" style="text-align: center;">
-  <div class="ticket-info" style="display: inline-block;width: 350px;height: 500px;border: 1px solid #222;border-radius: 20px;margin: 50px 20px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);background-color: #ECECEC;vertical-align: top;text-align: center;overflow: hidden;">
-    <div class="top" style="background:url('http://i.imgur.com/sNq8Ezo.png') no-repeat top / 100% 100%;background-color: #243953;height: 180px;width: 100%;">
+<h3>Thank you for your booking!</h3>
+<h3>Your Order Number is: <%= @ticket.id%></h3>
+<h3>We look forward to seeing you at the event!</h3>
+</br>
+<h3>Find your ticket below:</h3>
+<div class="user-ticket-wrap" style="text-align: left;display:inline-block">
+<% @ticket.seats.each do |seat| %>
+
+    <div class="ticket-info" style="display: inline-block;width: 350px;height: 480px;border: 1px solid #222;border-radius: 20px;margin: 30px 20px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);background-color: #ECECEC;vertical-align: top;text-align: center;overflow: hidden;">
+      <div class="top" style="background:url('http://i.imgur.com/sNq8Ezo.png') no-repeat top / 100% 100%;background-color: #243953;height: 220px;width: 100%;">
+      </div>
+      <div class="bottom" style="margin: 0;margin-bottom: 4px;height: 200px;text-align: center;">
+
+        <div class="email-conf-name" style="width: 31.5%;display: inline-block;text-align: left;height: 90px;vertical-align: top;margin-left: -2px;padding: 24px 30px;background-color: #fff;border-bottom: 1px solid #ECECEC;margin-top:2px">
+          <p style="margin: 0;margin-bottom: 10px;">Event</p>
+          <strong><h4 style="margin: 0;">WDI CONF</h4></strong>
+          <strong><h4 style="margin: 0;">2016</h4></strong>
+        </div>
+
+        <div class="email-conf-time" style="width: 31.5%;display: inline-block;text-align: left;height: 90px;vertical-align: top;margin-left: -4px;padding: 24px 30px;background-color: #fff;border-bottom: 1px solid #ECECEC;margin-top:2px">
+          <p style="margin: 0;margin-bottom: 10px;">Time</p>
+          <strong><h4 style="margin: 0;">AUG 30TH, 2016</h4></strong>
+        </div>
+
+        <div class="email-seat-class" style="display: inline-block;text-align: left;height: 90px;width: 31.5%;margin-left: -2px;vertical-align: top;padding: 24px 30px;background-color: #fff;border-bottom: 1px solid #ECECEC;margin-top:2px">
+          <p style="margin: 0;margin-bottom: 10px;">Class</p>
+          <strong><h4 style="margin: 0;"><%= seat.seat_type.group.upcase %></h4></strong>
+        </div>
+
+        <div class="email-seat-num" style="display: inline-block;text-align: left;height: 90px;width: 31.5%;margin-left: -4px;vertical-align: top;padding: 24px 30px;background-color: #fff;border-bottom: 1px solid #ECECEC;margin-top:2px">
+          <p style="margin: 0;margin-bottom: 10px;">Seat</p>
+          <strong><h4 style="margin: 0;"><%= seat.seat_num %></h4></strong>
+        </div>
+
+      </div>
     </div>
-    <div class="bottom" style="margin: 0;margin-bottom: 10px;height: 300px;text-align: center;">
-      <div class="email-conf-name" style="width: 100px;display: inline-block;text-align: left;height: 100px;vertical-align: top;margin-left: -2px;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
-        <p style="margin: 0;margin-bottom: 10px;">Event</p>
-        <h4 style="margin: 0;">WDI CONF</h4>
-        <h4 style="margin: 0;">2016</h4>
-      </div>
-      <div class="email-conf-time" style="width: 100px;display: inline-block;text-align: left;height: 100px;vertical-align: top;margin-left: -4px;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
-        <p style="margin: 0;margin-bottom: 10px;">Time</p>
-        <h4 style="margin: 0;">August 30th, 2016</h4>
-      </div>
-      <div class="email-seat-class" style="display: inline-block;text-align: left;height: 110px;width: 100px;margin-left: -2px;vertical-align: top;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
-        <p style="margin: 0;margin-bottom: 10px;">Class</p>
-        <% @ticket.seats.each do |seat| %>
-          <h4 style="margin: 0;"><%= seat.seat_type.group %></h4>
-        <% end %>    
-      </div>
-      <div class="email-seat-num" style="display: inline-block;text-align: left;height: 110px;width: 100px;margin-left: -4px;vertical-align: top;padding: 24px 30px;background-color: #F7F7F5;border-bottom: 1px solid #ECECEC;">
-        <p style="margin: 0;margin-bottom: 10px;">Seat</p>
-        <% @ticket.seats.each do |seat| %>
-          <h4 style="margin: 0;"><%= seat.seat_num %></h4>
-        <% end %>  
-      </div>
-    </div>
-  </div>
+
+<% end %>
 </div>

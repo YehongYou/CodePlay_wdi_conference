@@ -1,9 +1,11 @@
+<div id="checkout-page">
+
+<a class="back-to-choose-seats"><button class="login-button">Back to seats selection</button></a>
+
 <%= form_tag charges_path do %>
 
   <input type="hidden" name="tickets_list" value="<%= @seats %>" class="tickets_list">
   <input type="hidden" name="total" value="<%= @total %>" class="total">
-  
-  <a class="back-to-choose-seats">Back to choose seats</a>
 
   <div class="order-summary">
 
@@ -13,7 +15,7 @@
       <% @seats.each do |seat|%>
         <tr>
           <td class="seat-checkout"><%= seat[:seat_num] %></td>
-          <td class="type-checkout"><%= seat[:type] %></td>
+          <td class="type-checkout"><%= seat[:type].upcase %></td>
           <td class="price-checkout"><%= number_to_currency(seat[:price]) %></td>
         </tr>
       <% end %>
@@ -45,6 +47,7 @@
   </div>
 
 <% end %>
+</div>
 
 <script type="text/javascript">
   var seat_numbers = [];
@@ -53,18 +56,17 @@
     seat_numbers.push(tds.eq(i).text());
   }
   var countDown = function(sec) {
-   timer = setInterval(function() {
-     $('#counter').text(sec-- + " seconds remaining");
-
-     if (sec === -1) {
-        $.ajax({
-          url: '/api/seats/revert',
-          data: {seats_num: seat_numbers},
-          method: 'put'
-        }).done(function(){
-          location.href = document.referrer;
-        });
-     }
+    timer = setInterval(function() {
+    $('#counter').text(sec-- + " seconds remaining");
+    if (sec === -1) {
+      $.ajax({
+        url: '/api/seats/revert',
+        data: {seats_num: seat_numbers},
+        method: 'put'
+      }).done(function(){
+        location.href = document.referrer;
+      });
+    }
    }, 1000);
   }
   countDown(300);
@@ -80,5 +82,11 @@
       location.href = document.referrer;
     });
   });
+  // go back button in browser or keyboard
+  bajb_backdetect.OnBack = function()
+  {
+    // session storage to store the seat_numbers
+    sessionStorage.setItem('seats_num', seat_numbers);
+  }
 
 </script>

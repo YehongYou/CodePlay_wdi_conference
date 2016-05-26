@@ -1,42 +1,69 @@
-.events-handler {
-  margin-top: 50px;
-
-  .add-event-btn {
-    background-color: $caribbean-green;
-    padding: 5px 8px;
-    margin-left: 50px;
-    border:none;
-    height: 35px;
-    font-size: 1em;
-    float: right;
-    margin-right: 150px;
-    margin-bottom: 20px;
-    border:1px solid white;
+.events-application-container {
+  table {
+    margin: 0 auto;
+    border: 1px solid #222;
+    padding: 6px 10px;
+    border-collapse: collapse;
   }
-
-  .add-event-btn:hover {
-    background-color: royalblue;
+  tr {
+    // border: 1px solid #222;
   }
-
+  td {
+    border: 1px solid #444;
+    padding: 0 12px;
+  }
   h1 {
-    font-size:1.6em;
+    font-size: 30px;
     text-align: center;
-    padding:20px;
+    padding: 40px;
   }
 
   th {
     text-align: left;
-    background-color: $caribbean-green;
+    background-color: rgba(0,0,0,.5);
+    padding-left: 13px;
   }
+}
+
+.add-event-btn {
+  background-color: $caribbean-green;
+  padding: 5px 8px;
+  border: none;
+  height: 35px;
+  font-size: 0.85em;
+  border: 1px solid white;
+  position: absolute;
+  top: 85px;
+  right: 0;
+}
+
+.add-event-btn:hover {
+  background-color: royalblue;
+}
+
+.events-handler-wrap {
+  position: relative;
+  max-width: 539px;
+  margin: 0 auto;
+}
+
+.events-handler {
 
   .event-name-td {
+    padding-left: 12px;
     padding-right: 80px;
   }
   .event-time-td {
-    padding-right: 100px;
+    padding-left: 12px;
+    padding-right: 80px;
   }
   .event-edit-td {
+    padding-left: 12px;
     padding-right: 15px;
+  }
+  .event-action-td {
+    text-align: center;
+    padding: 0 12px;
   }
   form {
     display: inline-block;
@@ -46,20 +73,13 @@
     border:none;
     background-color: inherit;
     cursor: pointer;
+
   }
   .event-edit-btn {
     border:none;
     background-color: inherit;
-    padding-right: 10px;
     cursor: pointer;
-  }
-  .edit-hover {
-    display: none;
-    color:$california;
-  }
-  .delete-hover {
-    display: none;
-    color:$california;
+    padding-right: 12px;
   }
   .fa-pencil-square-o, .fa-trash {
     color:white;
@@ -73,55 +93,20 @@
 
 }
 .applying-users-handler {
-  margin: 50px auto;
+  margin: 0px auto;
   margin-bottom:0;
-  padding-bottom:8em;
 
-  h1 {
-    font-size:1.6em;
-    text-align: center;
-    padding:20px;
-  }
-  th {
-    text-align: center;
-    background-color: $denim;
-    line-height: 60px;
-  }
-  table, td, th {
-    padding:5px 20px 5px 20px;
-  }
-  table {
-    border-collapse: collapse;
-    border-radius: 6px;
-    border-style: hidden;
-    box-shadow: 0 0 0 2px white;
-  }
-  td {
-    padding:10px;
-    border: 1px solid white;
-  }
-  tr {
-    line-height: 25px;
-  }
-  .applying-user-name {
-    text-align: center;
-  }
-  .applying-topic {
-    text-align: center;
-  }
   .applying-content {
-    // padding-left: 10px;
+    width: 40%;
   }
-  .applying-actions {
-    text-align: center;
-  }
-  table {
-    margin: 20px auto;
-    margin-bottom:0;
-    border-collapse: collapse;
-    width: 80%;
-    padding:10px 0px 10px 15px;
-  }
+
+  // table {
+  //   margin: 20px auto;
+  //   margin-bottom:0;
+  //   border-collapse: collapse;
+  //   width: 80%;
+  //   padding:10px 0px 10px 15px;
+  // }
 
   .approve-button {
     border:none;
@@ -196,7 +181,7 @@
 
 .edit-events-form {
   display: none;
-  padding-top: 50px;
+  padding-top: 13em;
   background-image: image-url('seating-bg.jpg');
   background-size:cover;
   height:100vh;
@@ -215,7 +200,7 @@
     font-size: 0.9em;
   }
   .edit-event-submit {
-    background-color: #f4b555;
+    background-color: $caribbean-green;
     margin-top: 20px;
     color:white;
     font-weight: bold;
@@ -236,38 +221,28 @@
   margin: 50px auto;
   margin-bottom:0;
 
-  th {
+  // th {
+  //   text-align: center;
+  //   background-color: $caribbean-green;
+  //   line-height: 60px;
+  // }
+
+  .speaker-delete-tbn {
+    border:none;
+    background-color: inherit;
+    cursor: pointer;
     text-align: center;
-    background-color: $caribbean-green;
-    line-height: 60px;
+  }
+  .fa-trash:hover {
+    color: #B30000;
   }
 
-}
+  form {
+    text-align: center;
+  }
+  .event-action-td {
+    text-align: center;
+    padding-right: 12px;
+  }
 
-table, td, th {
-  padding:10px 0px 10px 15px;
-}
-table {
-  margin: 20px auto;
-  margin-bottom:0;
-  width: 80%;
-  border-collapse: collapse;
-  border-radius: 6px;
-  border-style: hidden;
-  box-shadow: 0 0 0 2px white;
-}
-td{
-  border: 1px solid white;
-}
-
-
-.speaker-delete-tbn {
-  border:none;
-  background-color: inherit;
-  cursor: pointer;
-}
-
-.speaker-delete-tbn:hover{
-  background-color: red;
-  border-radius: 20px;
 }

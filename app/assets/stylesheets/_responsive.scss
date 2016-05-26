@@ -95,6 +95,10 @@
 
 @media screen and (device-aspect-ratio: 40/71) {
 
+  .speaker-info {
+    font-size:0.6em;
+  }
+
   .conf-name {
     font-size:3.5em;
   }
@@ -103,19 +107,49 @@
     font-size:2em;
   }
 
+  #greeting {
+    font-size:1em !important;
+  }
+
   #img-profile {
-    bottom:25% !important;
-    right:5% !important;
+    position:static !important;
+    margin-top:6em;
+  }
+
+  #edit-page {
+    min-height:100vh;
+    height:auto;
+  }
+
+  #profile-section {
+    position:static !important;
+    padding-top:5em;
+    padding-right:4em;
   }
 
 }
 
 @media screen and (max-width: 767px) {
 
+  .about-image, .ab-1 {
+    display:none;
+  }
+
+  .speaker-box {
+    height:63.5em !important;
+    width:63.5em !important;
+    left:6.5% !important;
+    top:4.5% !important;
+  }
+
   #img-profile {
     height:18em !important;
     width:18em !important;
     left:15% !important;
+  }
+
+  #desc-section {
+    padding: 0 2em 0 2em;
   }
 
   #description {
@@ -147,7 +181,127 @@
     padding:0 0 1em 0 !important;
   }
 
+  .add-events-form #close-add-event, #close-edit-event {
+    right: 11% !important;
+  }
+
+  .reject-button {
+    display:flex;
+    -webkit-display:flex;
+  }
+
+  .applying-users-handler .applying-content {
+    width: 100% !important;
+  }
+
+  .events-application-container {
+
+    table {
+      th {
+        padding:0;
+      }
+
+      td {
+        padding:0;
+      }
+    }
+
+    .events-handler .event-time-td {
+      padding:0;
+    }
+
+    .events-handler .event-name-td {
+      padding: 1em;
+    }
+
+    .event-name-td {
+      padding: 0;
+    }
+    .event-time-td {
+      padding:0;
+    }
+
+    .applying-users-handler {
+      table, thead, tbody, th, td, tr {
+		    display: block;
+        text-align:left;
+        background-color:$caribbean-green;
+	    }
+
+      table {
+        border:none;
+        margin:0 1.3em 0 1.3em;
+      }
+
+      .applying-list {
+        padding:0;
+      }
+
+      thead tr {
+    		position: absolute;
+    		top: -9999px;
+    		left: -9999px;
+    	}
+
+      .list-of-titles {
+        display:none;
+      }
+
+    	tr { border: 1px solid white; }
+
+    	td {
+    		border: none;
+    		border-bottom: 1px solid white;
+    		position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    	}
+
+    	td:after {
+    		position: absolute;
+    		top: 6px;
+    		left: 6px;
+    		width: 100%;
+    		white-space: nowrap;
+    	}
+
+      td:before {
+        margin-right:20px;
+        font-size:1.1em;
+        background-color:#0b4c3f;
+        padding:0.5em !important;
+      }
+
+      td:nth-of-type(1):before { content: "Name"; }
+    	td:nth-of-type(2):before { content: "Topic"; }
+    	td:nth-of-type(3):before { content: "Content"; }
+    	td:nth-of-type(4):before { content: "Event"; }
+    	td:nth-of-type(5):before { content: "Time"; }
+    	td:nth-of-type(6):before { content: "Actions"; }
+    }
+
+    .speakers-list-form {
+      td {
+        padding:0;
+      }
+    }
+
+  }
+
 }
+
+@media screen and (device-aspect-ratio: 375/667) {
+
+  #img-profile {
+    left:12% !important;
+  }
+
+
+}
+
+
 
 @media screen and (max-width: 796px) {
 
@@ -179,12 +333,16 @@
 
   #profile-section {
     top:180% !important;
-    right:6% !important;
+    right:8% !important;
     text-align:center !important;
 
 
     li {
       text-align:center !important;
+    }
+
+    a {
+      color:white;
     }
 
   }

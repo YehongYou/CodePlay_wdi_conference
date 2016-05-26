@@ -6,13 +6,14 @@ class EventsController < ApplicationController
     @speakers = EventSpeaker.where(application_status: 'approved')
     @seats = Seat.all
     @taken_seats = @seats.where(status: 'Taken')
+    @available_seats = @seats.where(status: 'available')
     if session[:user_id] == nil
       redirect_to '/'
     else
       @user = User.find(session[:user_id])
       if @user.user_type.group == 'admin'
         render :index
-      else 
+      else
         redirect_to '/'
       end
     end

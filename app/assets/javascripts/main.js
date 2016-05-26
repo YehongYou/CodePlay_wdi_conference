@@ -6,7 +6,7 @@ smoothScroll.init({offset: 48});
 	$(window).scroll(function() {
 
 		var scrollLength = $(this).scrollTop();
-    console.log(scrollLength);
+    // console.log(scrollLength);
 
 		if (scrollLength > 80) {
 			$('.about-title').addClass('appear');

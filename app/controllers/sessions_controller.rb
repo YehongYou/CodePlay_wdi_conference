@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def login
-      @user = User.find_by(name: params[:name])
+      @user = User.find_by(email: params[:email])
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         if @user.user_type.group == "admin"
