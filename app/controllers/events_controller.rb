@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @event_speakers = EventSpeaker.where(application_status: 'applying')
     @speakers = EventSpeaker.where(application_status: 'approved')
-    @seats = Seat.all
+    @seats = Seat.where(event_id: 1)
     @taken_seats = @seats.where(status: 'Taken')
     @available_seats = @seats.where(status: 'available')
     if session[:user_id] == nil

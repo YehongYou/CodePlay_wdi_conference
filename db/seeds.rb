@@ -52,10 +52,8 @@ User.create(name:"Matthew Machuga", password:"pudding", email:"mm@email.com", im
 
 # # events table
 
-Event.create(name:"WDICONF2016", time:"2016-7-23 08:00:00", total_seats:50);
-Event.create(name:"WDICONF2016", time:"2016-7-23 11:00:00", total_seats:80);
-Event.create(name:"WDICONF2016", time:"2016-7-23 14:00:00", total_seats:60);
-Event.create(name:"WDICONF2016", time:"2016-7-23 16:00:00", total_seats:40);
+Event.create(name:"WDICONF2016", time:"2016-8-30", total_seats:50);
+
 #    Ticket.destroy_all
 #    EventSpeaker.destroy_all
 #
