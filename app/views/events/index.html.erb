@@ -25,10 +25,15 @@
     <h1 class="admin-title"><i class="fa fa-ticket" aria-hidden="true"></i>&nbsp;Tickets</h1>
 
     <div class="ticket-status">
+      <span>Total Seats Available: <%= @available_seats.size%></span>
+      </br>
+      <span>Sold Seats: <%= @taken_seats.size %></span>
     </div>
+ </div>
 
-  <div data-scroll id="events-section" style="clear:both;">
 
+  <div data-scroll id="events-section">
+      <div class="events-handler-wrap">
       <h1 class="admin-title"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Events</h1>
       <button class="add-event-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add Event</button>
       </div>
@@ -121,11 +126,7 @@
             </table>
           <% end %>
       </div>
-<<<<<<< HEAD
-</div>
-=======
 
->>>>>>> 4949c574d2b3a9f162452bb759a88408cee81a93
 <script id="form-template" type="text/x-handlebars-template">
   <tr class="speaker-item" data-speaker-id="{{speaker_id}}">
     <td>{{speaker_name}}</td>
