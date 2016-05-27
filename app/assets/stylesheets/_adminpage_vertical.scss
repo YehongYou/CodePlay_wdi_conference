@@ -17,9 +17,9 @@
   height:auto;
   background-color: $denim;
   padding-bottom: 50px;
-  .admin-title {
-    padding-top: 80px;
-  }
+  // .admin-title {
+  //   padding-top: 80px;
+  // }
 }
 
 #applications {
@@ -38,7 +38,8 @@
 .ticket-status {
   text-align:center;
   margin:0 auto;
-  margin-top:2em;
+  margin-top:1em;
+  margin-bottom:1em;
   width:50%;
   font-size:1.5em;
 }
