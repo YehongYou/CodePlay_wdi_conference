@@ -89,8 +89,13 @@
   border-radius: 6px;
   padding-top: 12px;
 
-  p {
-    padding-top: 4em;
+  a {
+    margin-top: 6em;
+    color: #888; 
+  }
+
+  a:hover {
+    color: $froly;
   }
 }
 

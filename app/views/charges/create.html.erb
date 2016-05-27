@@ -4,14 +4,8 @@
     <h1 class="thank-you">You paid <strong>$<%= @amount/100 %>.00</strong>!</h1>
     <h2 class="thank-you2">Your tickets will be sent to your email.</h2>
     <h2 class="thank-you2">See you at the event!</h2>
-    <p>This page will be redirected in 5 seconds</p>
+    <a href ="/">Back to Main Page</a>
   </div>
 </div>
 
 <canvas id="canvas"></canvas>
-
-<script type="text/javascript">
-  setTimeout(function(){
-    window.location = '/';
-  },5000);
-</script>
