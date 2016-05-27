@@ -1,32 +1,38 @@
 #greeting {
-  position:absolute;
-  margin-top:0.5em;
-  font-size:4em;
+  position: absolute;
+  margin-top: 0.5em;
+  font-size: 5vw;
   -webkit-animation: slide-in 1s;
-      -moz-animation: slide-in 1s;
-       -ms-animation: slide-in 1s;
-        -o-animation: slide-in 1s;
-           animation: slide-in 1s;
+  -moz-animation: slide-in 1s;
+  -ms-animation: slide-in 1s;
+  -o-animation: slide-in 1s;
+  animation: slide-in 1s;
+  top: 70px;
+  left: 10%;
 }
 
 #show-profile {
   width:100vw;
-  height:50vh;
+  height:40vh;
   background-image:url('bg3.jpg');
   padding:1em;
+  position: relative;
 }
 
 
 #img-profile {
-  position:absolute;
-  bottom:31%;
-  border:3px solid white;
-  border-radius:50%;
-  border:3px solid $caribbean-green;
+  position: absolute;
+  bottom: 31%;
+  border: 3px solid white;
   border-radius: 50%;
-  height:15em;
-  width:15em;
-  transition:0.5s;
+  border: 3px solid #1abc9c;
+  border-radius: 50%;
+  height: 15em;
+  width: 15em;
+  transition: 0.5s;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 160px;
 }
 
 #img-profile:hover {
@@ -39,19 +45,27 @@
   height:auto;
   max-width:100vw;
   overflow-x:hidden;
+  background-color: $caribbean-green;
 
   a:hover {
     color:$froly;
   }
 }
 
-#profile-section {
-  position:relative;
-  top:70%;
-  right:10%;
-  text-align:right;
-  transition:0.5s;
+.speaker-status li {
+  border: 0;
+}
 
+#profile-section {
+  transition: 0.5s;
+  position: relative;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#edit-profile {
   li {
     display:inline-block;
     padding:1em;
@@ -64,7 +78,6 @@
              animation: slide-in-left 1s;
   }
 
-
   li:hover {
     border-color:$froly;
   }
@@ -73,17 +86,17 @@
 #desc-section {
   width: 100%;
   margin: 0 auto;
-  min-height:50vh;
+  // min-height:50vh;
   height:auto;
   background-color: $caribbean-green;
   transition:0.5s;
 }
 
 #description {
-  position:relative;
-  top:10%;
-  left:30%;
-  transition:0.5s;
+  position: relative;
+  top: 160px;
+  transition: 0.5s;
+  text-align: center;
 }
 
 #speaker-form {
@@ -161,9 +174,8 @@
 }
 
 .speaker-status {
-  text-align:left;
-  padding-top:8em;
-  padding-left:2em;
+  text-align:center;
+  padding-top:1em;
   -webkit-animation: slide-in-left 1s;
       -moz-animation: slide-in-left 1s;
        -ms-animation: slide-in-left 1s;

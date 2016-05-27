@@ -1,41 +1,45 @@
 <div id="edit-page">
   <div id="show-profile">
-    <a href="/">Back To Main</a>
-    <h1 id="greeting">Hello <%= @user.name%>,</h1>
+    <a href="/"><button class="login-button">Back To Main</button></a>
+    <h1 id="greeting">Hello <%= @user.name.capitalize%>,</h1>
     <img id="img-profile" src="<%= @user.img%>" alt="">
 
-      <div id="profile-section">
-        <ul id="edit-profile">
-          <a href="/users/<%= @user.id %>/edit"><li>Edit Profile</li></a>
-          <a class="apply-btn" href=""><li>Apply to be a Speaker</li></a>
-          <% if @user.user_type_id == 1 %>
-            <a href="/events"><li>Manage Speakers &amp; Events</li></a>
-          <% else %>
-            <a href="/tickets"><li>Buy Tickets</li></a>
-          <% end %>
-        </ul>
-      </div>
+
   </div>
 
 
   <div id="desc-section">
-    <p id="description"><%= @user.desc%></p>
-    <ul class="speaker-status">
-    <% @user.event_speakers.each do |content|%>
-      <% if content.application_status == "approved"%>
-          </br>
-          <li> Your application to be a Speaker on "<%= content.topic%>" has been <span class="topic-speaker"><%= content.application_status%>.</span></li>
-          <li>Event: <%= content.event.name%></li>
-          <li>Time: <%= content.talk_time%></li>
-      <% elsif content.application_status == "rejected" %>
-          </br>
-          <li> Sorry your application to be a Speaker on "<%= content.topic%>" has been <span class="topic-speaker"><%= content.application_status%></span>.</li>
-      <% else %>
-          </br>
-          <li> Your application to be a Speaker on "<%= content.topic%>" is currently <span class="topic-speaker">pending.</span></li>
-      <%end%>
-    <%end%>
+    <p id="description"><%= @user.desc.capitalize%></p>
+
+    <div id="profile-section">
+      <ul id="edit-profile">
+        <a href="/users/<%= @user.id %>/edit"><li>Edit Profile</li></a>
+        <a class="apply-btn" href=""><li>Apply to be a Speaker</li></a>
+        <% if @user.user_type_id == 1 %>
+          <a href="/events"><li>Manage Speakers &amp; Events</li></a>
+        <% else %>
+          <a href="/tickets"><li>Buy Tickets</li></a>
+        <% end %>
       </ul>
+
+      <ul class="speaker-status">
+        <% @user.event_speakers.each do |content|%>
+          <% if content.application_status == "approved"%>
+              </br>
+              <li> Your application to be a Speaker on "<%= content.topic%>" has been <span class="topic-speaker"><%= content.application_status%>.</span></li>
+              <li>Event: <%= content.event.name%></li>
+              <li>Time: <%= content.talk_time%></li>
+          <% elsif content.application_status == "rejected" %>
+              </br>
+              <li> Sorry your application to be a Speaker on "<%= content.topic%>" has been <span class="topic-speaker"><%= content.application_status%></span>.</li>
+          <% else %>
+              </br>
+              <li> Your application to be a Speaker on "<%= content.topic%>" is currently <span class="topic-speaker">pending.</span></li>
+          <%end%>
+        <%end%>
+      </ul>
+    </div>
+
 
 
   </div>
