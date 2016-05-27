@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user.password = params[:password]
     @user.desc = params[:desc]
     @user.user_type_id = 2
-    @user.img = "https://image.freepik.com/free-icon/robo-to-logo_318-50667.png"
+    @user.img = "/assets/robot.png"
     if @user.save
       # send email
       UserMailer.signup_confirmation(@user).deliver_now

@@ -93,6 +93,13 @@
 
 }
 
+@media screen and (device-aspect-ratio: 375/667) {
+  #img-profile {
+    transform: none !important;
+  }
+}
+
+
 @media screen and (device-aspect-ratio: 40/71) {
 
   .speaker-info {
@@ -112,8 +119,6 @@
   }
 
   #img-profile {
-    position:static !important;
-    margin-top:6em;
   }
 
   #edit-page {
@@ -122,9 +127,7 @@
   }
 
   #profile-section {
-    position:static !important;
-    padding-top:5em;
-    padding-right:4em;
+    padding-top:3em;
   }
 
 }
@@ -145,28 +148,31 @@
   #img-profile {
     height:18em !important;
     width:18em !important;
-    left:15% !important;
+    right:15% !important;
   }
 
   #desc-section {
     padding: 0 2em 0 2em;
   }
 
+  #edit-profile {
+    li {
+      margin-left:0 !important;
+    }
+  }
+
   #description {
-    position:static !important;
     padding-top:10em;
-    text-align:center;
   }
 
   #profile-section {
-    color:$caribbean-green;;
+    color:white;
     top:180% !important;
-    right:12% !important;
+    right:5% !important;
     text-align:center !important;
 
 
     li {
-      margin-left:4em !important;
       padding:0 !important;
       border: none !important;
       text-align:center !important;
@@ -315,43 +321,3 @@
     }
 
 }
-
-// @media screen and (max-width: 1165px) {
-//
-//   #img-profile {
-//     right: 0%;
-//     left: 10%;
-//     height:18em !important;
-//     width:18em !important;
-//   }
-//
-//   #description {
-//     position:static !important;
-//     padding-top:10em;
-//     text-align:center;
-//   }
-//
-//   #profile-section {
-//     top:180% !important;
-//     right:8% !important;
-//     text-align:center !important;
-//
-//
-//     li {
-//       text-align:center !important;
-//     }
-//
-//     a {
-//       color:white;
-//     }
-//
-//   }
-//
-//   .speaker-status {
-//     margin: 0 auto;
-//     width:70%;
-//     margin-top:10em !important;
-//     padding:0 0 1em 0 !important;
-//   }
-//
-// }
