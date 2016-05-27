@@ -13,7 +13,7 @@
 
     <div id="profile-section">
       <ul id="edit-profile">
-        <a href="/users/<%= @user.id %>/edit"><li>Edit Profile</li></a>
+        <a href="/users/<%= @user.id %>/edit"><li id="edit-list">Edit Profile</li></a>
         <a class="apply-btn" href=""><li>Apply to be a Speaker</li></a>
         <% if @user.user_type_id == 1 %>
           <a href="/events"><li>Manage Speakers &amp; Events</li></a>

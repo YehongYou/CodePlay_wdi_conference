@@ -184,6 +184,10 @@
   color:$denim;
 }
 
+#edit-list {
+  margin-left:0 !important;
+}
+
 @keyframes slide-in {
     from { transform: translateY(-500px); }
     to   { transform: translateY(0); }
